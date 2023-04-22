@@ -364,15 +364,25 @@ img{
   backface-visibility: hidden;
 }
 
-.flip-card-front {
-  
-  color: black;
-}
-
 .flip-card-back {
   
-  color: white;
   transform: rotateY(180deg);
+}
+
+/* icon side adjustment */
+#tech_support_logo{
+  margin-top: 40px;
+  height: 150px;
+  width: 150px;
+}
+.card_front_text{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+.card_back_text{
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 /*========== MENU ==========*/
 .menu__container{
@@ -534,7 +544,7 @@ img{
   body{
     margin: 0;
   }
-
+ 
   .section{
     padding-top: 8rem;
   }
@@ -567,6 +577,7 @@ img{
   .menu__container{
     margin-top: var(--mb-6);
   }
+ 
 
   .menu__container{
     grid-template-columns: repeat(3, 210px);
@@ -604,5 +615,9 @@ img{
 @media screen and (min-height: 721px) {
     .home__container {
         height: 640px;
+    } .flip-card{
+      margin-left: 30px;
+    }#truck{
+      margin-left: 70px;
     }
 }
