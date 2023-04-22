@@ -454,6 +454,30 @@ img{
   width: 230px;
   justify-self: center;
 }
+/* ====Text animation */
+.parent {
+  width: 1040px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.A_box {
+  text-align: center;
+  display: flex;
+  background-color: #e27676;
+  height: 100px;
+  width: 100px;
+  
+}
+
+
+
+
+
+
+
 
 /*========== CONTACT ==========*/
 .contact__container{
@@ -620,4 +644,15 @@ img{
     }#truck{
       margin-left: 70px;
     }
-}
+    #box1,#box2,#box3,#box4{
+      flex: 100%;
+    }
+    .A_box{
+      height: 50px;
+      width: 50px;
+    }
+    
+   }
+    
+   
+
