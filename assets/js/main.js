@@ -105,18 +105,50 @@ sr.reveal(`.home__data, .home__img,
             .footer__content`, {
     interval: 200
 })
-let valueDisplays = document.querySelectorAll(".num");
-let interval = 4000;
 
-valueDisplays.forEach((valueDisplay) => {
-  let startValue = 0;
-  let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-  let duration = Math.floor(interval / endValue);
-  let counter = setInterval(function () {
-    startValue += 1;
-    valueDisplay.textContent = startValue;
-    if (startValue == endValue) {
-      clearInterval(counter);
+//animation for text
+let text_ani= function(){
+    let valueDisplays = document.querySelectorAll(".num");
+    let interval = 4000;
+    
+    valueDisplays.forEach((valueDisplay) => {
+      let startValue = 0;
+      let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+      let duration = Math.floor(interval / endValue);
+      let counter = setInterval(function () {
+        startValue += 1;
+        valueDisplay.textContent = startValue;
+        if (startValue == endValue) {
+          clearInterval(counter);
+        }
+      }, duration);
+    });
+    
+};
+
+let ele=document.getElementsByClassName("container");
+let eleheight=ele.clientHeight;
+let counter=1;
+document.addEventListener('scroll',text_animation);
+
+function inview(){
+    let windowheight=window.innerHeight;
+    let scrollY=window.scrollY || window.pageXOffset;
+    var scrollPosition = scrollY + windowHeight;
+    var elementPosition = ele.getBoundingClientRect().top + scrollY + eleheight;
+    if (scrollPosition > elementPosition) {
+        return true;
+      }
+      
+      return false;
     }
-  }, duration);
-});
+    
+  function  text_animation(){
+    if(inview && counter){
+        
+            text_ani();
+            counter=0;
+        
+       
+    }
+  }
